@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atrea.Utilities", "Atrea.Utilities\Atrea.Utilities.csproj", "{B6A5FA8B-8639-4CF4-AA1A-F0DF9105B13D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atrea.Utilities.Tests", "Atrea.Utilities.Tests\Atrea.Utilities.Tests.csproj", "{68E353D3-4FEE-44ED-9A17-219DC3D86F6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6A5FA8B-8639-4CF4-AA1A-F0DF9105B13D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A5FA8B-8639-4CF4-AA1A-F0DF9105B13D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A5FA8B-8639-4CF4-AA1A-F0DF9105B13D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A5FA8B-8639-4CF4-AA1A-F0DF9105B13D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68E353D3-4FEE-44ED-9A17-219DC3D86F6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68E353D3-4FEE-44ED-9A17-219DC3D86F6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68E353D3-4FEE-44ED-9A17-219DC3D86F6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68E353D3-4FEE-44ED-9A17-219DC3D86F6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C538355B-F490-490A-B3FA-8EF5E2E9622C}
+	EndGlobalSection
+EndGlobal
