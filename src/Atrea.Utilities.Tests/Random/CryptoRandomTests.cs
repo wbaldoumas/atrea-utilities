@@ -22,17 +22,24 @@ namespace Atrea.Utilities.Tests.Random
         }
 
         [Test]
-        public void Next_With_Max_Generates_Random_Number_Within_Range()
+        public void Next_With_Bad_MinValue_Generates_Exception()
         {
             // arrange
+            const int min = -1;
             const int max = 10;
+
             var cryptoRandom = new CryptoRandom();
 
             // act
-            var result = cryptoRandom.Next(max);
+            Func<int> act = () =>
+            {
+                var next = cryptoRandom.Next(min, max);
+
+                return next;
+            };
 
             // assert
-            result.Should().BeInRange(0, max);
+            act.Should().Throw<ArgumentOutOfRangeException>();
         }
 
         [Test]
@@ -55,78 +62,17 @@ namespace Atrea.Utilities.Tests.Random
         }
 
         [Test]
-        public void Next_With_Range_Generates_Random_Number_Within_Range()
+        public void Next_With_Max_Generates_Random_Number_Within_Range()
         {
             // arrange
-            const int min = 5;
             const int max = 10;
-            
             var cryptoRandom = new CryptoRandom();
 
             // act
-            var result = cryptoRandom.Next(min, max);
-
-
-            result.Should().BeInRange(min, max);
-        }
-
-        [Test]
-        public void Next_With_MinValue_Equal_To_MaxValue_Returns_MinValue()
-        {
-            // arrange
-            const int min = 5;
-            const int max = 5;
-            const int expectedValue = 5;
-
-            var cryptoRandom = new CryptoRandom();
-
-            // act
-            var result = cryptoRandom.Next(min, max);
-
-
-            result.Should().Be(expectedValue);
-        }
-
-        [Test]
-        public void Next_With_Bad_MinValue_Generates_Exception()
-        {
-            // arrange
-            const int min = -1;
-            const int max = 10;
-
-            var cryptoRandom = new CryptoRandom();
-
-            // act
-            Func<int> act = () =>
-            {
-                var next = cryptoRandom.Next(min, max);
-
-                return next;
-            };
+            var result = cryptoRandom.Next(max);
 
             // assert
-            act.Should().Throw<ArgumentOutOfRangeException>();
-        }
-
-        [Test]
-        public void Next_With_MinValue_Greater_Than_MaxValue_Generates_Exception()
-        {
-            // arrange
-            const int min = 11;
-            const int max = 10;
-
-            var cryptoRandom = new CryptoRandom();
-
-            // act
-            Func<int> act = () =>
-            {
-                var next = cryptoRandom.Next(min, max);
-
-                return next;
-            };
-
-            // assert
-            act.Should().Throw<ArgumentOutOfRangeException>();
+            result.Should().BeInRange(0, max);
         }
 
         [Test]
@@ -151,16 +97,57 @@ namespace Atrea.Utilities.Tests.Random
         }
 
         [Test]
-        public void NextDouble_Generates_Random_Number_Within_Range()
+        public void Next_With_MinValue_Equal_To_MaxValue_Returns_MinValue()
         {
             // arrange
+            const int min = 5;
+            const int max = 5;
+            const int expectedValue = 5;
+
             var cryptoRandom = new CryptoRandom();
 
             // act
-            var result = cryptoRandom.NextDouble();
+            var result = cryptoRandom.Next(min, max);
+
+
+            result.Should().Be(expectedValue);
+        }
+
+        [Test]
+        public void Next_With_MinValue_Greater_Than_MaxValue_Generates_Exception()
+        {
+            // arrange
+            const int min = 11;
+            const int max = 10;
+
+            var cryptoRandom = new CryptoRandom();
+
+            // act
+            Func<int> act = () =>
+            {
+                var next = cryptoRandom.Next(min, max);
+
+                return next;
+            };
 
             // assert
-            result.Should().BeInRange(0.0, 1.0);
+            act.Should().Throw<ArgumentOutOfRangeException>();
+        }
+
+        [Test]
+        public void Next_With_Range_Generates_Random_Number_Within_Range()
+        {
+            // arrange
+            const int min = 5;
+            const int max = 10;
+
+            var cryptoRandom = new CryptoRandom();
+
+            // act
+            var result = cryptoRandom.Next(min, max);
+
+
+            result.Should().BeInRange(min, max);
         }
 
         [Test]
@@ -186,9 +173,23 @@ namespace Atrea.Utilities.Tests.Random
         {
             var cryptoRandom = new CryptoRandom();
 
+            // ReSharper disable once AssignNullToNotNullAttribute
             Action act = () => cryptoRandom.NextBytes(null);
 
             act.Should().Throw<ArgumentNullException>();
+        }
+
+        [Test]
+        public void NextDouble_Generates_Random_Number_Within_Range()
+        {
+            // arrange
+            var cryptoRandom = new CryptoRandom();
+
+            // act
+            var result = cryptoRandom.NextDouble();
+
+            // assert
+            result.Should().BeInRange(0.0, 1.0);
         }
     }
 }

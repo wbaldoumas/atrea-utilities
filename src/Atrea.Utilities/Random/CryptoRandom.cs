@@ -5,9 +5,7 @@ namespace Atrea.Utilities.Random
 {
     /// <summary>
     ///     A cryptographically-strong random number generator.
-    ///
     ///     Inspired by the following code:
-    ///
     ///     Source: MSDN Magazine > 2007 > September > .NET Matters: Tales from the CryptoRandom
     ///     Source URL: http://msdn.microsoft.com/en-us/magazine/cc163367.aspx
     ///     Authors: Stephen Toub & Shawn Farkas
@@ -29,7 +27,7 @@ namespace Atrea.Utilities.Random
         // ReSharper disable once UnusedParameter.Local
         public CryptoRandom(int _) { }
 
-        /// <inheritdoc cref="IRandom.Next()"/>
+        /// <inheritdoc cref="IRandom.Next()" />
         public override int Next()
         {
             _cryptoProvider.GetBytes(_uint32Buffer);
@@ -38,7 +36,7 @@ namespace Atrea.Utilities.Random
         }
 
         /// <inheritdoc cref="IRandom.Next(int)" />
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="maxValue"/> is less than zero.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="maxValue" /> is less than zero.</exception>
         public override int Next(int maxValue)
         {
             if (maxValue < 0)
@@ -50,7 +48,10 @@ namespace Atrea.Utilities.Random
         }
 
         /// <inheritdoc cref="IRandom.Next(int, int)" />
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="minValue" /> is greater than <paramref name="maxValue" />.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="minValue" /> is greater than <paramref name="maxValue" />
+        ///     .
+        /// </exception>
         public override int Next(int minValue, int maxValue)
         {
             if (maxValue < minValue)
@@ -81,7 +82,7 @@ namespace Atrea.Utilities.Random
 
                 var rand = BitConverter.ToUInt32(_uint32Buffer, 0);
 
-                const long max = (1 + (long) uint.MaxValue);
+                const long max = 1 + (long) uint.MaxValue;
                 var remainder = max % diff;
 
                 if (rand < max - remainder)
@@ -102,7 +103,9 @@ namespace Atrea.Utilities.Random
         }
 
         /// <inheritdoc cref="System.Random.NextBytes(byte[])" />
-        /// <exception cref="ArgumentNullException" /><paramref name="buffer" /> is null.
+        /// <exception cref="ArgumentNullException" />
+        /// <paramref name="buffer" />
+        /// is null.
         public override void NextBytes(byte[] buffer)
         {
             if (buffer == null)
