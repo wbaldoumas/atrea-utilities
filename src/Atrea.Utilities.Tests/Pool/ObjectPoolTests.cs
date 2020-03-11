@@ -1,4 +1,4 @@
-﻿using System.Threading;
+﻿using System;
 using Atrea.Utilities.Pool;
 using FluentAssertions;
 using NUnit.Framework;
@@ -39,6 +39,19 @@ namespace Atrea.Utilities.Tests.Pool
             var newFoo = objectPool.Get();
 
             newFoo.Should().NotBeEquivalentTo(reusedFoo);
+        }
+
+        [Test]
+        public void Null_Object_Generator_Function_Results_In_ArgumentNullException()
+        {
+            Func<ObjectPool<Foo>> act = () =>
+            {
+                var objectPool = new ObjectPool<Foo>(null);
+
+                return objectPool;
+            };
+
+            act.Should().Throw<ArgumentNullException>();
         }
     }
 }
