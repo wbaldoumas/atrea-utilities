@@ -2,7 +2,7 @@
 Useful utilities for .NET.
 
 [![Documentation](https://img.shields.io/badge/%F0%9F%93%84-documentation-informational)](https://github.com/itabaiyu/atrea-utilities/blob/master/documentation/index.md)
-[![GitHub](https://img.shields.io/github/license/itabaiyu/atrea-utilities)](https://github.com/itabaiyu/atrea-utilities/blob/master/LICENSE)
+[![GitHub](https://img.shields.io/github/license/itabaiyu/atrea-utilities)](https://github.com/itabaiyu/atrea-utilities/blob/master/LICENSE.md)
 |     |  **Active Integrations**   |
 | --- | --- |
 | **Build** | [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/itabaiyu/atrea-utilities/dotnetcore)](https://github.com/itabaiyu/atrea-utilities/actions?query=workflow%3Adotnetcore)
