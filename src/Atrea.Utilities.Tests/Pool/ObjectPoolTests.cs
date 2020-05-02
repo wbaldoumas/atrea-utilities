@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Atrea.Utilities.Pool;
 using FluentAssertions;
 using NUnit.Framework;
@@ -28,7 +28,7 @@ namespace Atrea.Utilities.Tests.Pool
         {
             var objectPool = new ObjectPool<Foo>(() => new Foo());
 
-            var foo = new Foo {Bar = 10};
+            var foo = new Foo { Bar = 10 };
 
             objectPool.Put(foo);
 

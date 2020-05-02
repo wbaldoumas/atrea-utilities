@@ -18,7 +18,28 @@ namespace Atrea.Utilities.Tests.Random
             {
                 var nextRandomValue = random.Next();
 
-                nextRandomValue.Should().Be((int)value);
+                nextRandomValue.Should().Be((int) value);
+            }
+        }
+
+        [Test]
+        public void Next_Using_All_Values_Loops_Values_To_Beginning()
+        {
+            var random = new FakeRandom(Values);
+
+            foreach (var value in Values)
+            {
+                var nextRandomValue = random.Next();
+
+                nextRandomValue.Should().Be((int) value);
+            }
+
+            // ensure that values are used again, in the same order.
+            foreach (var value in Values)
+            {
+                var nextRandomValue = random.Next();
+
+                nextRandomValue.Should().Be((int) value);
             }
         }
 
@@ -31,7 +52,7 @@ namespace Atrea.Utilities.Tests.Random
             {
                 var nextRandomValue = random.Next(10);
 
-                nextRandomValue.Should().Be((int)value);
+                nextRandomValue.Should().Be((int) value);
             }
         }
 
@@ -44,7 +65,7 @@ namespace Atrea.Utilities.Tests.Random
             {
                 var nextRandomValue = random.Next(10, 100);
 
-                nextRandomValue.Should().Be((int)value);
+                nextRandomValue.Should().Be((int) value);
             }
         }
 
@@ -58,27 +79,6 @@ namespace Atrea.Utilities.Tests.Random
                 var nextRandomValue = random.NextDouble();
 
                 nextRandomValue.Should().Be(value);
-            }
-        }
-
-        [Test]
-        public void Next_Using_All_Values_Loops_Values_To_Beginning()
-        {
-            var random = new FakeRandom(Values);
-
-            foreach (var value in Values)
-            {
-                var nextRandomValue = random.Next();
-
-                nextRandomValue.Should().Be((int)value);
-            }
-
-            // ensure that values are used again, in the same order.
-            foreach (var value in Values)
-            {
-                var nextRandomValue = random.Next();
-
-                nextRandomValue.Should().Be((int)value);
             }
         }
     }

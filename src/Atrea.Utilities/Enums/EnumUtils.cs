@@ -14,17 +14,22 @@ namespace Atrea.Utilities.Enums
         ///     Creates and yields an enumerable of the values of the enumerated type.
         /// </summary>
         /// <exception cref="ArgumentException">Throws argument exception when called on non-enumerated type.</exception>
-        /// <returns>Returns an <see cref="IEnumerable{T}"/> of values of the enumerated type.</returns>
-        public static IEnumerable<T> AsEnumerable() => (T[]) Enum.GetValues(typeof(T));
+        /// <returns>Returns an <see cref="IEnumerable{T}" /> of values of the enumerated type.</returns>
+        public static IEnumerable<T> AsEnumerable()
+        {
+            return (T[]) Enum.GetValues(typeof(T));
+        }
 
         /// <summary>
         ///     Creates a dictionary from the given enumerated type.
         /// </summary>
-        /// <returns>Returns an <see cref="IDictionary{TKey,TValue}"/> generated from the enumerated type.</returns>
-        public static IDictionary<int, string> AsDictionary() =>
-            AsEnumerable().ToDictionary(
+        /// <returns>Returns an <see cref="IDictionary{TKey,TValue}" /> generated from the enumerated type.</returns>
+        public static IDictionary<int, string> AsDictionary()
+        {
+            return AsEnumerable().ToDictionary(
                 enumValue => (int) (object) enumValue,
                 enumValue => enumValue.ToString()
             );
+        }
     }
 }
