@@ -1,7 +1,37 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Version>1.0.0</Version>
+    <Authors>William Baldoumas</Authors>
+    <Company>William Baldoumas</Company>
+    <Description>Useful utilities for .NET.</Description>
+    <Copyright>Copyright ©2020 William Baldoumas</Copyright>
+    <PackageProjectUrl>https://github.com/itabaiyu/atrea-utilities</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/itabaiyu/atrea-utilities.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>utilities, object pool, enum, enums, random, thread local, thread safety, cryptographic</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Atrea.Utilities.xml</DocumentationFile>
+    <DefaultDocumentationFolder>..\..\documentation</DefaultDocumentationFolder>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DefaultDocumentation" Version="0.6.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
 </Project>

@@ -5,8 +5,9 @@ namespace Atrea.Utilities.Random
     /// <summary>
     ///     A builder for creating thread-safe random number generators which implement the <see cref="IRandom" /> interface.
     ///     For more info on the subject of thread-safe randomness, see the following:
-    ///     <see href="https://codeblog.jonskeet.uk/2009/11/04/revisiting-randomness/" />
-    ///     <see href="https://devblogs.microsoft.com/pfxteam/getting-random-numbers-in-a-thread-safe-way/" />
+    /// 
+    ///     https://codeblog.jonskeet.uk/2009/11/04/revisiting-randomness/
+    ///     https://devblogs.microsoft.com/pfxteam/getting-random-numbers-in-a-thread-safe-way/
     /// </summary>
     public interface IThreadLocalRandomBuilder
     {

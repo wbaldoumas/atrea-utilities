@@ -12,7 +12,7 @@
         int Next();
 
         /// <summary>
-        ///     Returns a non-negative random integer that is less than the specified <see cref="maxValue" />.
+        ///     Returns a non-negative random integer that is less than the specified maxValue.
         /// </summary>
         /// <param name="maxValue">
         ///     The exclusive upper bound of the random number to be generated. maxValue must be greater than or
@@ -22,8 +22,7 @@
         int Next(int maxValue);
 
         /// <summary>
-        ///     Returns a random integer that is greater than or equal to <see cref="minValue" />, and less than
-        ///     <see cref="maxValue" />.
+        ///     Returns a random integer that is greater than or equal to minValue, and less than maxValue.
         /// </summary>
         /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
         /// <param name="maxValue">
