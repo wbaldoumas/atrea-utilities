@@ -8,7 +8,7 @@ namespace Atrea.Utilities.Random
     ///     Inspired by the following code:
     ///     Source: MSDN Magazine > 2007 > September > .NET Matters: Tales from the CryptoRandom
     ///     Source URL: http://msdn.microsoft.com/en-us/magazine/cc163367.aspx
-    ///     Authors: Stephen Toub & Shawn Farkas
+    ///     Authors: Stephen Toub and Shawn Farkas
     /// </summary>
     public class CryptoRandom : System.Random, IRandom
     {
