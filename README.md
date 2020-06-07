@@ -1,13 +1,13 @@
 # atrea-utilities
 Useful utilities for .NET.
 
-[![Documentation](https://img.shields.io/badge/%F0%9F%93%84-documentation-informational)](https://github.com/itabaiyu/atrea-utilities/blob/master/documentation/index.md)
-[![GitHub](https://img.shields.io/github/license/itabaiyu/atrea-utilities)](https://github.com/itabaiyu/atrea-utilities/blob/master/LICENSE.md)
 |     |  **Active Integrations**   |
 | --- | --- |
 | **Build** | [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/itabaiyu/atrea-utilities/dotnetcore)](https://github.com/itabaiyu/atrea-utilities/actions?query=workflow%3Adotnetcore)
 | **NuGet** | [![NuGet Badge](https://buildstats.info/nuget/atrea.utilities)](https://www.nuget.org/packages/atrea.utilities/) [![Nuget](https://img.shields.io/nuget/v/atrea.utilities)](https://www.nuget.org/packages/Atrea.Utilities/)
 | **Test Coverage** | [![Coverage Status](https://coveralls.io/repos/github/itabaiyu/atrea-utilities/badge.svg?branch=master)](https://coveralls.io/github/itabaiyu/atrea-utilities?branch=master)
+| **License** | [![GitHub](https://img.shields.io/github/license/itabaiyu/atrea-utilities)](https://github.com/itabaiyu/atrea-utilities/blob/master/LICENSE.md)
+| **Documentation** | [![Documentation](https://img.shields.io/badge/%F0%9F%93%84-documentation-informational)](https://github.com/itabaiyu/atrea-utilities/blob/master/documentation/index.md)
 
 ## Installation
 
